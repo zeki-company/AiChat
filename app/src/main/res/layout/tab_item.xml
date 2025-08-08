@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cdsy.aichat.ui.view.GradientTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tab_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:gradient_selectMode="true"
+    app:gradient_colors="@array/bonus_gradient_colors"
+    app:gradient_positions="@array/bonus_gradient_positions"
+    tools:text="AAAAA"
+    android:paddingVertical="12dp"
+    android:textColor="#999999"
+    android:textSize="20dp"
+    app:gradient_bold="true" />

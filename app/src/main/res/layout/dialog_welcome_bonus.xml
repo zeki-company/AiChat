@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <LinearLayout
+        android:id="@+id/ll_welcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/bg_corner_9dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_coin_tip"
+        app:layout_constraintEnd_toEndOf="@id/ll_coin_tip"
+        app:layout_constraintStart_toStartOf="@id/ll_coin_tip">
+
+        <com.cdsy.aichat.ui.view.GradientTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome Bonus"
+            android:textSize="14dp"
+            app:gradient_bold="true"
+            app:gradient_colors="@array/bonus_gradient_colors"
+            app:gradient_orientation="horizon"
+            app:gradient_positions="@array/bonus_gradient_positions" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Exclusive Rewards for\nNew Users"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/img_dialog_gift"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ll_welcome" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_coin_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="44dp"
+        android:background="@drawable/bg_bonus_dialog_card"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_coin"
+                app:tint="#202020" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="200"
+                android:textColor="#202020"
+                android:textSize="48dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="First top-up $1.99 to get\n200 tokens"
+            android:textColor="#202020"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/btn_bonus_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="18dp"
+            android:elevation="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:src="@drawable/bg_bonus_next" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Next"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_close"
+        app:layout_constraintEnd_toEndOf="@+id/ll_coin_tip"
+        app:layout_constraintStart_toStartOf="@+id/ll_coin_tip"
+        app:layout_constraintTop_toBottomOf="@+id/ll_coin_tip" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

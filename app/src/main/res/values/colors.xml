@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#FFFFFF</color>
+    <color name="primaryDarkColor">#FFFFFF</color>
+    <color name="switchColor">#2778FF</color>
+    <color name="accentColor">#B5FF00</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="hintColor">#76837B</color>
+    <color name="cardBackColor">#202020</color>
+    <color name="appBackColor">#80000000</color>
+    <color name="color_fore_hand">#C8EC47</color>
+    <color name="color_back_hand">#FF861C</color>
+    <color name="color_error_text">#F55762</color>
+</resources>

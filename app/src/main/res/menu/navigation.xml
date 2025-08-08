@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/top_homepage"
+        android:icon="@drawable/icon_homepage"
+        android:title="@string/nav_home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/top_messages"
+        android:icon="@drawable/icon_message"
+        android:title="@string/nav_messages"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/top_account"
+        android:icon="@drawable/icon_account"
+        android:title="@string/nav_account"
+        app:showAsAction="always" />
+</menu>

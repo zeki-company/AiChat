@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cdsy.aichat.ui.me.AccountViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitStart"
+            android:src="@drawable/bg_account" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="56dp">
+
+                <com.cdsy.aichat.ui.view.GradientTextView
+                    android:id="@+id/gradientTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/account_item_account"
+                    android:textFontWeight="600"
+                    android:textSize="18dp"
+                    app:gradient_colors="@array/account_gradient_colors"
+                    app:gradient_positions="@array/account_gradient_positions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_setting"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/icon_setting"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_setting">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="16dp"
+
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <com.cdsy.aichat.ui.view.CornerImageView
+                            imageUrl="@{viewModel.portrait}"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            app:type="circle"
+                            tools:src="@drawable/img_gift" />
+
+                        <TextView
+                            android:id="@+id/tv_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@{viewModel.name}"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            tools:text="AASSbb" />
+
+                        <TextView
+                            android:id="@+id/tv_user_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            tools:text="UserID:3254436436543" />
+
+                        <ImageView
+                            android:layout_width="240dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/img_daily_reward" />
+
+                        <com.cdsy.aichat.ui.view.GradientCard
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            app:gradient_card_colors="@array/card_token_colors"
+                            app:gradient_card_orientation="vertical"
+                            app:gradient_card_positions="@array/card_token_positions"
+                            app:gradient_card_round="18">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:src="@drawable/img_square"
+                                    app:layout_constraintBottom_toBottomOf="@id/csl_top_up"
+                                    app:layout_constraintEnd_toEndOf="@id/csl_top_up"
+                                    app:layout_constraintStart_toStartOf="@id/csl_top_up"
+                                    app:layout_constraintTop_toTopOf="@id/csl_top_up" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/csl_top_up"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/iv_token"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="12dp"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/icon_token"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/tv_token"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="18dp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="@id/iv_token"
+                                        app:layout_constraintStart_toEndOf="@id/iv_token"
+                                        app:layout_constraintTop_toTopOf="@id/iv_token"
+                                        tools:text="4325 TOLEN" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="WALLET"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="@id/tv_token"
+                                        app:layout_constraintTop_toBottomOf="@id/tv_token" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_top_up"
+                                        android:layout_width="100dp"
+                                        android:layout_height="38dp"
+                                        android:layout_marginVertical="25dp"
+                                        android:layout_marginEnd="14dp"
+                                        android:src="@drawable/img_top_up"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.cdsy.aichat.ui.view.GradientCard>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:background="@drawable/bg_corner_solid_16dp"
+                            android:backgroundTint="@color/cardBackColor"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/icon_item_activity" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:text="Account Activity"
+                                android:textColor="@color/white"
+                                android:textSize="14dp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icon_go" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_account_activity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_corner_solid_16dp"
+                            android:backgroundTint="@color/cardBackColor"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/icon_info" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:text="Privacy"
+                                android:textColor="@color/white"
+                                android:textSize="14dp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icon_go" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_corner_solid_16dp"
+                            android:backgroundTint="@color/cardBackColor"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/icon_discord" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:text="Discord"
+                                android:textColor="@color/white"
+                                android:textSize="14dp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icon_go" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
+
+
+</layout>

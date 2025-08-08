@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/single_activity"
+            app:startDestination="@id/bridge_fragment">
+
+    <fragment
+            android:id="@+id/bridge_fragment"
+            android:name="com.cdsy.aichat.ui.base.BridgeFragment"
+            android:label="fragment_bridge">
+<!--        <action android:id="@+id/action_bridge_fragment_to_person_record_list_fragment"
+            app:destination="@id/person_record_list_fragment"/>-->
+        <action
+            android:id="@+id/action_bridge_fragment_to_search_fragment"
+            app:destination="@id/search_fragment" />
+        <action
+            android:id="@+id/action_bridge_fragment_to_setting_fragment"
+            app:destination="@id/setting_fragment" />
+        <action
+            android:id="@+id/action_bridge_fragment_to_character_detail_fragment"
+            app:destination="@id/character_detail_fragment" >
+        </action>
+        <action
+            android:id="@+id/action_bridge_fragment_to_chat_fragment"
+            app:destination="@id/chat_fragment" />
+        <action
+            android:id="@+id/action_bridge_fragment_to_account_activity_fragment"
+            app:destination="@id/account_activity_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.cdsy.aichat.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search"/>
+
+    <fragment
+        android:id="@+id/setting_fragment"
+        android:name="com.cdsy.aichat.ui.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting"/>
+
+    <fragment
+        android:id="@+id/character_detail_fragment"
+        android:name="com.cdsy.aichat.ui.character_detail.CharacterDetailFragment"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail">
+    </fragment>
+
+    <fragment
+        android:id="@+id/chat_fragment"
+        android:name="com.cdsy.aichat.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+    </fragment>
+
+    <fragment
+        android:id="@+id/account_activity_fragment"
+        android:name="com.cdsy.aichat.ui.account_activity.AccountActivityFragment"
+        android:label="fragment_account_activity"
+        tools:layout="@layout/fragment_account_activity">
+    </fragment>
+
+</navigation>

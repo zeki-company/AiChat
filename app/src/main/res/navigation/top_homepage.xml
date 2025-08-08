@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_homepage"
+    app:startDestination="@id/HomepageFragment">
+    <fragment
+        android:id="@+id/HomepageFragment"
+        android:label="fragment_homepage"
+        android:name="com.cdsy.aichat.ui.homepage.HomepageFragment"
+        tools:layout="@layout/fragment_homepage" />
+</navigation>

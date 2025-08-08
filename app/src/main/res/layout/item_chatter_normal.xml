@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="character"
+            type="com.cdsy.aichat.model.api.character.Character" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="12dp">
+
+        <com.cdsy.aichat.ui.view.CornerImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            imageUrl="@{character.poster}"
+            android:foreground="@drawable/bg_cover_gradient_corner"
+            app:radius="10dp"
+            app:type="round"
+            android:minHeight="280dp" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="28dp"
+                android:layout_height="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_hot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:maxLines="1"
+                android:text="@{character.profile.name}"
+                android:textColor="#E6FFFFFF"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_content"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:maxLines="3"
+                android:text="@{character.profile.summary}"
+                android:ellipsize="end"
+                android:textColor="#99FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@id/rv_tag"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_chatter_tag" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

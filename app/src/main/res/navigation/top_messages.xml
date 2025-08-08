@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_homepage"
+    app:startDestination="@id/MessagesFragment">
+
+    <fragment
+        android:id="@+id/MessagesFragment"
+        android:label="fragment_messages"
+        android:name="com.cdsy.aichat.ui.message.MessagesFragment"
+        tools:layout="@layout/fragment_messages" />
+
+</navigation>

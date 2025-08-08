@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--
+        android:fromXScale
+        Float. 水平方向缩放比例的初始值，其中1.0是没有任何变化。
+        android:toXScale
+        Float. 水平方向缩放比例的结束值，其中1.0是没有任何变化。
+        android:fromYScale
+        Float. 竖直方向缩放比例的初始值，其中1.0是没有任何变化。
+        android:toYScale
+        Float. 竖直方向缩放比例的结束值，其中1.0是没有任何变化。
+        android:pivotX
+        Float. 缩放中心点的x坐标
+        android:pivotY
+        Float. 缩放中心点的y坐标
+    -->
+
+    <scale
+        android:duration="5000"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="2.0"
+        android:toYScale="2.0" />
+</set>

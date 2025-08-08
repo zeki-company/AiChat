@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.cdsy.aichat.model.api.finance.Goods" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:foreground="@drawable/selector_top_up_item">
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:textColor="#D5CFE3"
+            tools:text="$9.99"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_coin"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_money"
+            app:layout_constraintBottom_toTopOf="@id/tv_free"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/icon_coin" />
+
+        <TextView
+            android:id="@+id/tv_token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            tools:text="700 tokens"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_coin"
+            app:layout_constraintEnd_toEndOf="@id/tv_money"
+            app:layout_constraintStart_toEndOf="@id/iv_coin"
+            app:layout_constraintTop_toTopOf="@id/iv_coin" />
+
+        <TextView
+            android:id="@+id/tv_free"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:gravity="center"
+            android:text="Free xxx tokens"
+            android:textSize="14dp"
+            android:textColor="#070707"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_top_up_item_bottom_half" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

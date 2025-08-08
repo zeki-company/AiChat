@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Lunari</string>
+
+    <!--Dialog-->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">cancel</string>
+    <string name="dialog_title"></string>
+    <string name="dialog_msg"></string>
+    <string name="dialog_button_cancel">Cancel</string>
+    <string name="dialog_button_delete">Delete</string>
+    <string name="dialog_button_clear_cache">清除缓存</string>
+    <string name="dialog_button_save">保存</string>
+    <string name="dialog_button_show">表示</string>
+    <string name="dialog_button_select">选择</string>
+    <string name="dialog_button_login">登录</string>
+    <string name="dialog_button_clear">清除</string>
+    <string name="exit_info">再按一次退出</string>
+
+    <!--Error-->
+    <string name="api_error_network_error_title">网络异常</string>
+    <string name="api_error_network_error_msg">API请求异常</string>
+    <string name="error_msg_no_net_work">无网络，请检查网络设置</string>
+    <string name="error_dialog_msg_error">异常</string>
+    <string name="error_dialog_msg_http_error">服务器接口异常（%d）</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_account">Account</string>
+
+    <!-- Home Fragment-->
+    <!--<string name="messages_item_messages">Messages</string>
+    <string name="messages_item_following">Following</string>-->
+
+    <!-- Character Detail Fragment-->
+    <string name="go_chat">Go Chat</string>
+    <string name="follow">Follow</string>
+    <string name="like">Like</string>
+
+    <!-- Chat Fragment-->
+    <string name="say_sopmething">Say something?</string>
+
+    <!-- Messages Fragment-->
+    <string name="messages_item_messages">Messages</string>
+    <string name="messages_item_following">Following</string>
+    <string name="messages_item_pin_chat">Pin Chat</string>
+    <string name="messages_item_delete_chat">Delete Chat</string>
+    <string name="messages_item_delete_chat_title">Delete this chat?</string>
+    <string name="messages_item_delete_chat_content">All chat records and relatedinformation will be discarded after deletion.</string>
+
+    <!-- Account Fragment-->
+    <string name="account_item_account">Account</string>
+
+    <!-- Setting Fragment -->
+    <string name="setting_title">Setting</string>
+    <string name="current_language">English</string>
+    <string name="setting_item_language">Language</string>
+    <string name="setting_item_privacy">Privacy</string>
+    <string name="setting_item_notification">Turn on notification</string>
+    <string name="setting_item_delete_account">Delete Account</string>
+
+    <!-- Currency -->
+    <string name="currency_flag">$</string>
+
+    <!-- Language Selection -->
+    <string name="language_selection_title">Select Language</string>
+    <string name="language_restart_message">Language changed. App will restart to apply changes.</string>
+    <string name="language_restart_ok">Restart</string>
+    <string name="language_restart_cancel">Cancel</string>
+
+    <!-- Sign Out -->
+    <string name="sign_out">Sign Out</string>
+</resources>

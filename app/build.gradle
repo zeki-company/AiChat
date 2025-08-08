@@ -1,0 +1,221 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+// apply plugin: 'com.google.gms.google-services'  // 暂时注释掉，需要配置google-services.json
+
+android {
+    namespace 'com.cdsy.aichat'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.deepislet.tavern.test"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'aichat'
+            keyPassword '123456'
+            storeFile file('../aichat.jks')
+            storePassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        config {
+            keyAlias 'aichat'
+            keyPassword '123456'
+            storeFile file('../aichat.jks')
+            storePassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+/*    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }*/
+    /*kotlinOptions {
+        jvmTarget = '11'
+    }*/
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        //产品环境
+        production {
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
+            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
+            buildConfigField "Boolean", "USE_MOCK", "false"
+        }
+        //测试环境
+        staging {
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
+            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
+            buildConfigField "Boolean", "USE_MOCK", "false"
+        }
+        //开发环境
+        development {
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
+            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
+            buildConfigField "Boolean", "USE_MOCK", "false"
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+    viewBinding{
+        enabled = true
+    }
+}
+
+dependencies {
+    //implementation 'androidx.test.ext:junit-ktx:1.2.1'
+    //testImplementation 'junit:junit:4.12'
+    def rx_version = "2.2.13"
+    def kodein_version = "6.4.1"
+    def lifecycle_version = "2.7.0"
+    def room_version = "2.2.4"
+    def retrofit_version = "2.6.2"
+    def okhttp_version = '4.9.2'
+    def activity_version = "1.0.0"
+    def kotpref_version = "2.9.2"
+    def nav_version = "2.6.0"
+    def security_version = "1.0.0"
+    def moshi_version = "1.15.0"
+    def glide_version = "4.10.0"
+    def checkVersionLib = "2.4.1_androidx"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.20"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation ("com.github.zhpanvip:bannerviewpager:3.5.12")
+
+    //compile 'com.zzhoujay.richtext:richtext:latest-version'
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.8.0'
+
+    //MarkDown
+    implementation 'io.noties.markwon:core:4.6.2'
+
+    //Google内购
+    implementation 'com.android.billingclient:billing:8.0.0'
+
+    //Flexbox
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    //毛玻璃效果
+    //implementation 'com.github.mmin18:realtimeblurview:f54dc3c34d'
+    implementation 'com.github.centerzx:ShapeBlurView:1.0.5'
+
+    //日志
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Json Serializer
+    implementation("com.squareup.moshi:moshi-kotlin:${moshi_version}")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:${moshi_version}")
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    //AndroidX
+/*    implementation("androidx.core:core-ktx:1.9.0") {
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }*/
+
+    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("androidx.security:security-crypto:$security_version")
+    //implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    //implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    //implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+    //implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+
+    implementation("androidx.navigation:navigation-runtime-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    
+
+
+    /*//Database
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "androidx.room:room-compiler:$room_version"*/
+
+    //DI
+    implementation "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
+    implementation "org.kodein.di:kodein-di-framework-android-x:${kodein_version}"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rx_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //Retrofit OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${okhttp_version}"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:${okhttp_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp_version}"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:${okhttp_version}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    implementation("com.squareup.retrofit2:retrofit:${retrofit_version}") {
+        exclude module: 'okhttp'
+    }
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:${glide_version}"
+    kapt "com.github.bumptech.glide:compiler:${glide_version}"
+
+    //Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+/*    //update
+    implementation "com.github.AlexLiuSheng:CheckVersionLib:${checkVersionLib}"*/
+
+    //SharedPreference
+    implementation "com.chibatching.kotpref:kotpref:${kotpref_version}"
+    implementation "com.chibatching.kotpref:initializer:${kotpref_version}"
+    implementation 'com.chibatching.kotpref:enum-support:2.10.0'
+    implementation 'com.chibatching.kotpref:gson-support:2.10.0'
+}
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.jetbrains.kotlin') {
+            if (details.requested.name.startsWith("kotlin-stdlib")) {
+                details.useVersion "1.8.20"
+            }
+        }
+    }
+}

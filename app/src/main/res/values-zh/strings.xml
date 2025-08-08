@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">露娜</string>
+
+    <!--Dialog-->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">cancel</string>
+    <string name="dialog_title"></string>
+    <string name="dialog_msg"></string>
+    <string name="dialog_button_cancel">取消</string>
+    <string name="dialog_button_delete">删除</string>
+    <string name="dialog_button_clear_cache">清除缓存</string>
+    <string name="dialog_button_save">保存</string>
+    <string name="dialog_button_show">表示</string>
+    <string name="dialog_button_select">选择</string>
+    <string name="dialog_button_login">登录</string>
+    <string name="dialog_button_clear">清除</string>
+    <string name="exit_info">再按一次退出</string>
+
+    <!--Error-->
+    <string name="api_error_network_error_title">网络异常</string>
+    <string name="api_error_network_error_msg">API请求异常</string>
+    <string name="error_msg_no_net_work">无网络，请检查网络设置</string>
+    <string name="error_dialog_msg_error">异常</string>
+    <string name="error_dialog_msg_http_error">服务器接口异常（%d）</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">首页</string>
+    <string name="nav_messages">消息</string>
+    <string name="nav_account">账户</string>
+
+    <!-- Home Fragment-->
+    <!--<string name="messages_item_messages">Messages</string>
+    <string name="messages_item_following">Following</string>-->
+
+    <!-- Character Detail Fragment-->
+    <string name="go_chat">去聊天</string>
+    <string name="follow">关注</string>
+    <string name="like">喜欢</string>
+
+    <!-- Chat Fragment-->
+    <string name="say_sopmething">说点什么？</string>
+
+    <!-- Messages Fragment-->
+    <string name="messages_item_messages">消息</string>
+    <string name="messages_item_following">关注</string>
+    <string name="messages_item_pin_chat">置顶</string>
+    <string name="messages_item_delete_chat">删除</string>
+    <string name="messages_item_delete_chat_title">Delete this chat?</string>
+    <string name="messages_item_delete_chat_content">All chat records and relatedinformation will be discarded after deletion.</string>
+
+
+    <!-- Account Fragment-->
+    <string name="account_item_account">账户</string>
+
+    <!-- Setting Fragment -->
+    <string name="setting_title">设置</string>
+    <string name="current_language">中文</string>
+    <string name="setting_item_language">语言</string>
+    <string name="setting_item_privacy">隐私信息</string>
+    <string name="setting_item_notification">打开通知</string>
+    <string name="setting_item_delete_account">销毁账号</string>
+
+    <!-- Currency -->
+    <string name="currency_flag">¥</string>
+
+    <!-- Language Selection -->
+    <string name="language_selection_title">选择语言</string>
+    <string name="language_restart_message">语言已更改，应用将重启以应用更改。</string>
+    <string name="language_restart_ok">重启</string>
+    <string name="language_restart_cancel">取消</string>
+
+    <!-- Sign Out -->
+    <string name="sign_out">退出登录</string>
+</resources>
