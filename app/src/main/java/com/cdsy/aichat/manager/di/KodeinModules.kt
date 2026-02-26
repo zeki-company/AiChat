@@ -6,7 +6,9 @@ import com.cdsy.aichat.manager.api.AppService
 import com.cdsy.aichat.manager.api.CharacterService
 import com.cdsy.aichat.manager.api.DeviceService
 import com.cdsy.aichat.manager.api.FinanceService
+import com.cdsy.aichat.manager.api.ClubService
 import com.cdsy.aichat.manager.api.UserService
+import com.cdsy.aichat.manager.api.LoginService
 import com.cdsy.aichat.manager.api.base.ApiClient
 import com.cdsy.aichat.manager.api.base.HeaderInterceptor
 import com.cdsy.aichat.manager.api.base.NetErrorInterceptor
@@ -29,8 +31,10 @@ fun koinModule(app: Application) = Kodein.Module("database") {
     bind<DeviceService>() with singleton { instance<ApiClient>().createService(DeviceService::class.java) }
     bind<AppService>() with singleton { instance<ApiClient>().createService(AppService::class.java) }
     bind<UserService>() with singleton { instance<ApiClient>().createService(UserService::class.java) }
+    bind<LoginService>() with singleton { instance<ApiClient>().createService(LoginService::class.java) }
     bind<CharacterService>() with singleton { instance<ApiClient>().createService(CharacterService::class.java) }
     bind<FinanceService>() with singleton { instance<ApiClient>().createService(FinanceService::class.java) }
+    bind<ClubService>() with singleton { instance<ApiClient>().createService(ClubService::class.java) }
 }
 
 fun provideApiClient(): ApiClient {

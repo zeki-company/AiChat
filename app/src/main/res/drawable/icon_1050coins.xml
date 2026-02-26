@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <gradient
+                android:angle="0"
+                android:startColor="#FFCC33"
+                android:endColor="#ff9900" />
+        </shape>
+    </item>
+    <!-- 占位：文字由布局中的 TextView 显示，这里只做背景块 -->
+</layer-list>
+

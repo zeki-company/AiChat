@@ -12,6 +12,7 @@ import android.telephony.TelephonyManager
 import android.util.DisplayMetrics
 import android.view.WindowManager
 import androidx.core.app.ActivityCompat
+import com.cdsy.aichat.BuildConfig
 import com.cdsy.aichat.model.api.device.DeviceRequestModel
 import com.cdsy.aichat.model.api.device.NetworkInfo
 import java.util.*
@@ -256,27 +257,6 @@ class DeviceUtil {
                 sim_operator = getSimOperator(context),
                 is_vpn_connected = isVpnConnected(context),
                 is_proxy_enabled = isProxyEnabled(context)
-            )
-        }
-
-        /**
-         * 获取完整的设备信息
-         */
-        fun getDeviceInfo(context: Context): DeviceRequestModel {
-            return DeviceRequestModel(
-                unique_id = getUniqueId(context),
-                platform = getPlatform(),
-                device_name = getDeviceName(),
-                device_model = getDeviceModel(),
-                os_name = getOsName(),
-                os_version = getOsVersion(),
-                timezone = getTimezone(),
-                language = getLanguage(),
-                is_rooted = isRooted(),
-                screen_width = getScreenWidth(context),
-                screen_height = getScreenHeight(context),
-                pixel_ratio = getPixelRatio(context),
-                network = getNetworkInfo(context)
             )
         }
     }

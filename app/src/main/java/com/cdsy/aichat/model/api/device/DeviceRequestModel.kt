@@ -3,6 +3,8 @@ package com.cdsy.aichat.model.api.device
 data class DeviceRequestModel(
     val unique_id: String,
     val platform: String,
+    val app_id: String,
+    val app_version: String,
     val device_name: String? = null,
     val device_model: String? = null,
     val os_name: String? = null,

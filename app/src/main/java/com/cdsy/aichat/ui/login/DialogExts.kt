@@ -24,7 +24,7 @@ fun showLoginDialog(
     val addRecordDialog by lazy { BottomSheetDialog(context) }
     var payWayIndex = 0
     addRecordDialog.setContentView(dialogBinding.root)
-    addRecordDialog.delegate.findViewById<View>(R.id.design_bottom_sheet)
+    addRecordDiaTimber.delegate.findViewById<View>(R.id.design_bottom_sheet)
         ?.setBackgroundColor(context.resources.getColor(android.R.color.transparent))
     dialogBinding.etAmount.setText("")
     dialogBinding.etContent.setText("")
@@ -42,7 +42,7 @@ fun showLoginDialog(
 
     dialogBinding.btnLeft.apply {
         text = "取消"
-        setOnClickListener { addRecordDialog.dismiss() }
+        setOnClickListener { addRecordDiaTimber.dismiss() }
     }
     dialogBinding.btnConfirm.text = "添加"
     dialogBinding.btnConfirm.setOnClickListener {
@@ -69,7 +69,7 @@ fun showLoginDialog(
                         .getSelectedItem()
                         .map { it.id ?: 0 }
                 )
-                addRecordDialog.dismiss()
+                addRecordDiaTimber.dismiss()
             }
         }
 
@@ -93,7 +93,7 @@ fun showRecordDetailDialog(
 
     recordDetailDialog.setContentView(dialogBinding.root)
 
-    recordDetailDialog.delegate.findViewById<View>(R.id.design_bottom_sheet)
+    recordDetailDiaTimber.delegate.findViewById<View>(R.id.design_bottom_sheet)
         ?.setBackgroundColor(context.resources.getColor(android.R.color.transparent))
 
     dialogBinding.etAmount.setText(record.amount.toString())
@@ -129,7 +129,7 @@ fun showRecordDetailDialog(
         text = "结算"
         setOnClickListener {
             settlementRecord?.invoke()
-            recordDetailDialog.dismiss()
+            recordDetailDiaTimber.dismiss()
         }
     }
     dialogBinding.btnConfirm.text = "更正"
@@ -139,7 +139,7 @@ fun showRecordDetailDialog(
             dialogBinding.etAmount.text.toString().toFloat(),
             dialogBinding.tvPayWay.text.toString()
         )
-        recordDetailDialog.dismiss()
+        recordDetailDiaTimber.dismiss()
     }
     recordDetailDialog.show()
 }
@@ -152,11 +152,11 @@ fun showAddPersonDialog(
     val dialogAddPersonBinding by lazy { DialogAddPersonBinding.inflate(LayoutInflater.from(context)) }
     val addPersonDialog by lazy { BottomSheetDialog(context) }
     addPersonDialog.setContentView(dialogAddPersonBinding.root)
-    addPersonDialog.delegate.findViewById<View>(R.id.design_bottom_sheet)
+    addPersonDiaTimber.delegate.findViewById<View>(R.id.design_bottom_sheet)
         ?.setBackgroundColor(context.resources.getColor(android.R.color.transparent))
     dialogAddPersonBinding.etName.setText("")
     dialogAddPersonBinding.ivDelete.visibility = View.GONE
-    dialogAddPersonBinding.btnCancel.setOnClickListener { addPersonDialog.dismiss() }
+    dialogAddPersonBinding.btnCancel.setOnClickListener { addPersonDiaTimber.dismiss() }
     dialogAddPersonBinding.btnConfirm.text = "添加"
     dialogAddPersonBinding.btnConfirm.setOnClickListener {
         if (dialogAddPersonBinding.etName.text.isEmpty()) {
@@ -164,7 +164,7 @@ fun showAddPersonDialog(
             return@setOnClickListener
         }
         addPerson(dialogAddPersonBinding.etName.text.toString())
-        addPersonDialog.dismiss()
+        addPersonDiaTimber.dismiss()
     }
     addPersonDialog.show()
 }

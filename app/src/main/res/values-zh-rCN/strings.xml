@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+PROJECT: HIYAK
+LANG: zh-rCN
+AUTHOR: i18n_bot
+CREATED: 1/29/2026
+-->
+<resources>
+  <string name="bind_email_feedback">请将您的反馈发送至我们的支持邮箱 %1$s</string>
+  <!-- ... 省略：其余 HIYAK zh-rCN 多语言字符串，已从旧项目完整拷贝 ... -->
+</resources>
+

@@ -9,7 +9,7 @@ package com.cdsy.aichat.util
 object Constants {
 
     //Google
-    const val GOOGLE_CLIENT_ID = "356047390828-cd8bqj0mk13kb9m14vah9a4rhnotsetm.apps.googleusercontent.com"
+    const val GOOGLE_CLIENT_ID = "864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com"
 
     //环境代码
     const val PRODUCTION_ENV_CODE = "167494755e0d4956a69fb43925593519"

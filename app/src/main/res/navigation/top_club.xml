@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_homepage"
+    app:startDestination="@id/ClubFragment">
+    <fragment
+        android:id="@+id/ClubFragment"
+        android:label="fragment_club"
+        android:name="com.cdsy.aichat.ui.club.ClubFragment"
+        tools:layout="@layout/fragment_club" />
+</navigation>

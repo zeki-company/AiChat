@@ -1,15 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ===== 旧项目 Hiyak 的主题色（用于兼容迁移用的样式） ===== -->
     <color name="primaryColor">#FFFFFF</color>
     <color name="primaryDarkColor">#FFFFFF</color>
     <color name="switchColor">#2778FF</color>
     <color name="accentColor">#B5FF00</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="hintColor">#76837B</color>
     <color name="cardBackColor">#202020</color>
     <color name="appBackColor">#80000000</color>
     <color name="color_fore_hand">#C8EC47</color>
     <color name="color_back_hand">#FF861C</color>
     <color name="color_error_text">#F55762</color>
+
+    <!-- ===== 新项目 Lunari 原有颜色（完整从旧项目 colors.xml 迁入） ===== -->
+    <color name="colorPrimary">#7033FF</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="page_background">#FFFFFF</color>
+    <color name="page_background_dark">#FFFFFF</color>
+    <color name="page_home_background">#1E1E20</color>
+
+    <!-- 页面背景色 -->
+    <color name="page_background_gray">#f6f6f6</color>
+    <color name="page_background_gray_alpha">#9922242A</color>
+    <color name="page_background_gray_f8">#f8f8f8</color>
+    <color name="page_background_gray_f7">#f7f7f7</color>
+    <color name="video_chat_page_background">#333333</color>
+
+    <color name="transparent">#00000000</color>
+    <!-- 分割线颜色 -->
+    <color name="divider_line_color">#E4E4E5</color>
+    <color name="divider_line_color_alpha">#4DE4E4E5</color>
+    <!-- 分割线颜色 -->
+    <color name="divider_line_color_warning">#FC506F</color>
+    <!-- 分割线颜色 -->
+    <color name="divider_line_color_dark">#E4E4E5</color>
+
+    <color name="color_red">#FC506F</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_blue">#007AFF</color>
+    <color name="color_29292b">#29292b</color>
+    <color name="tab_bg_color">#1E1E20</color>
+    <color name="color_191e25">#191e25</color>
+
+    <color name="color_white_smoke">#F5F5F5</color>
+    <color name="color_grey">#E4E4E5</color>
+    <color name="color_grey_alpha">#CCE4E4E5</color>
+    <color name="font_color_primary">#1E1E20</color>
+    <color name="font_color_grey">#8B8C90</color>
+    <color name="font_color_e9ea">#E9EAEA</color>
+    <color name="font_color_c4">#C4C4C4</color>
+    <color name="font_color_grey_bf">#BFBFBF</color>
+    <color name="font_color_grey_82">#828282</color>
+    <color name="font_color_white">#FFFFFF</color>
+    <color name="font_color_white_alpha_80">#33FFFFFF</color>
+    <color name="font_color_white_alpha_23">#3BFFFFFF</color>
+    <color name="font_color_black_alpha_23">#3B000000</color>
+    <color name="font_color_black">#000000</color>
+    <color name="font_color_checked">#4627FF</color>
+    <color name="font_color_enable">#FFFFFF</color>
+    <color name="font_color_disable">#C2C7CD</color>
+    <color name="font_color_hint_ac">#ACACAC</color>
+
+    <color name="font_color_53">#535354</color>
+
+    <color name="font_color_primary_dark">#081431</color>
+    <color name="font_color_grey_dark">#C2C7CD</color>
+    <color name="font_color_white_dark">#FFFFFF</color>
+    <color name="font_color_checked_dark">#FFFFFF</color>
+    <color name="font_color_enable_dark">#FFFFFF</color>
+    <color name="font_color_disable_dark">#666666</color>
+
+    <color name="rippleColor">#1affffff</color>
+    <color name="rippleCirColor">#ffffff</color>
+
+    <!--White, Nero, White Lilac are the main colours, normally used for text and backgrounds.-->
+    <color name="white">#ffffff</color>
+    <color name="nero">#1E1E20</color>
+    <color name="white_lilac">#E4E4E5</color>
+
+    <!--Han Purple, Wilda Watermelon are the highlight or accent colour, normally used for text and main buttons.-->
+    <color name="lime_green">#62D142</color>
+    <color name="wilda_watermelon">#FC506F</color>
+    <color name="han_purple">#7033FF</color>
+
+    <color name="jaguar">#252527</color>
+    <color name="silver">#BFBFBF</color>
+    <color name="aluminium">#8B8C90</color>
+
+    <!-- Chat Activity -->
+    <color name="localBackground">#827b92</color>
+    <color name="remoteBackground">#484258</color>
+
+    <color name="color_white_90">#19ffffff</color>
+    <color name="color_white_80">#33ffffff</color>
+    <color name="color_white_95">#0cffffff</color>
+    <color name="color_white_75">#3Fffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_000_70">#4c000000</color>
+    <color name="color_b32e69_70">#4cb32e69</color>
+    <color name="color_000000_65">#59000000</color>
+    <color name="color_000000_90">#19000000</color>
+    <color name="color_000000_95">#0c000000</color>
+    <color name="color_000000_20">#cc000000</color>
+    <color name="color_000000_75">#3F000000</color>
+    <color name="color_000000_50">#7F000000</color>
+    <color name="color_000000_80">#33000000</color>
+    <color name="color_ffffff_20">#ccffffff</color>
+    <color name="color_ffffff_50">#7Fffffff</color>
+    <color name="color_ffffff_40">#99ffffff</color>
+    <color name="color_ff0404">#FF0404</color>
+    <color name="color_7033ff">#7033FF</color>
+    <color name="color_43ffffff">#43FFFFFF</color>
+    <color name="color_7D5C20">#7D5C20</color>
+    <color name="color_9568ff">#9568ff</color>
+    <color name="color_62d142">#62D142</color>
+    <color name="color_5062d142">#7F62D142</color>
+    <color name="color_ff6666">#FF6666</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="color_f6f6f6">#F6F6F6</color>
+    <color name="color_5f5f61">#5F5F61</color>
+    <color name="color_535354">#535354</color>
+    <color name="color_fc506f">#FC506F</color>
+    <color name="color_80fc506f">#33FC506F</color>
+    <color name="color_fc506f_50">#7FFC506F</color>
+    <color name="color_f5c164">#f5c164</color>
+    <color name="color_fcd858">#FCD858</color>
+    <color name="color_979797">#979797</color>
+    <color name="color_1e1e20">#1E1E20</color>
+    <color name="color_b1b1b1">#b1b1b1</color>
+    <color name="color_1e1e20_25">#3F1E1E20</color>
+    <color name="color_8b8c90">#8B8C90</color>
+    <color name="color_898a8d">#898a8d</color>
+    <color name="color_263238">#263238</color>
+    <color name="color_80d9d9d9">#33D9D9D9</color>
+    <color name="color_801e1e1e">#331e1e1e</color>
+    <color name="color_201e1e1e">#cc1e1e1e</color>
+    <color name="color_d9d9d9">#D9D9D9</color>
+    <color name="color_9562D142">#0c62D142</color>
+    <color name="color_95fc506f">#0cFC506F</color>
+    <color name="color_957033ff">#0c7033ff</color>
+    <color name="color_807033ff">#337033ff</color>
+    <color name="color_80_ffffff">#33ffffff</color>
+    <color name="color_407033ff">#997033ff</color>
+    <color name="color_40fcd858">#99FCD858</color>
+    <color name="color_2a2a2a">#2a2a2a</color>
+    <color name="color_ff0c10">#ff0c10</color>
+    <color name="color_ffd452">#FFD452</color>
+    <color name="color_ffc14c">#FFC14C</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_cc5810">#CC5810</color>
+    <color name="color_f5eddd">#F5EDDD</color>
+    <color name="color_4923c1">#4923c1</color>
+    <color name="x_recycler_color_text_gray">#FF777777</color>
+    <color name="x_recycler_color_loading_color1">#55777777</color>
+    <color name="x_recycler_color_loading_color2">#B1777777</color>
+    <color name="x_recycler_color_loading_color3">#FF777777</color>
+    <color name="color_493675">#493675</color>
+    <color name="color_1d1138">#1D1138</color>
+    <color name="color_431f99">#431F99</color>
+    <color name="color_bfbfbf">#BFBFBF</color>
+    <color name="color_c4c4c4">#C4C4C4</color>
+    <color name="color_e4e4e5">#E4E4E5</color>
+    <color name="color_error_red">#FF3333</color>
+
+    <color name="color_online">#62D142</color>
+    <color name="color_away">#FFC14C</color>
+    <color name="color_inline">#FF3333</color>
+
+    <!-- 旧项目 colors-clip.xml 迁入 -->
+    <color name="progress_color">#ffffff</color>
+    <color name="clip_shadow_color">#3bffffff</color>
+    <color name="video_clip_progress_color">#ffffff</color>
+    <color name="frame_bar_color">#FC506F</color>
+
 </resources>

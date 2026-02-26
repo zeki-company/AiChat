@@ -6,6 +6,7 @@
     <string name="dialog_cancel">cancel</string>
     <string name="dialog_title"></string>
     <string name="dialog_msg"></string>
+    <string name="profile_country_default">Earth</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="dialog_button_delete">Delete</string>
     <string name="dialog_button_clear_cache">清除缓存</string>
@@ -70,4 +71,40 @@
 
     <!-- Sign Out -->
     <string name="sign_out">Sign Out</string>
+
+    <!-- Email feedback (for i18n consistency with other locales) -->
+    <string name="bind_email_feedback">Please send your feedback to our support at %1$s</string>
+
+    <!-- 从旧 Club 界面迁移的文案 -->
+    <string name="club_title_default">CLUB</string>
+    <string name="popup_new_bonus_title">New user bonus</string>
+    <string name="banner_club_new_bonus">Enjoy your special new user discount before it ends!</string>
+    <string name="club_banner_coins_title">Get more coins at a discount price!</string>
+
+    <!-- Google / Firebase web client id（与旧项目保持一致） -->
+    <string name="default_web_client_id" translatable="false">864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com</string>
+    <string name="server_client_id" translatable="false">864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com</string>
+    <string name="server_client_id_dev" translatable="false">864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com</string>
+
+    <!-- Login / Sign In -->
+    <string name="login_main_google_button">Continue with Google</string>
+    <string name="login_main_email_button">Continue with Email</string>
+    <string name="login_main_comment_bottom">By continuing, you agree to our Terms of Use &amp; Privacy Policy</string>
+    <string name="hiyak_pro_purchase_terms_click">Terms of Use</string>
+    <string name="hiyak_pro_purchase_policy_click">Privacy Policy</string>
+    <string name="common_open_on_phone">Continue on Phone</string>
+    <string name="login_email_not_supported">Email login is not supported in this version.</string>
+    <string name="login_phone_not_supported">Phone login is not supported in this version.</string>
+
+    <!-- Old project login texts (simplified) -->
+    <string name="login_email_title">My email is</string>
+    <string name="login_email_comment_top">Enter the 6 digit code sent to %1$s.</string>
+    <string name="sign_up_username_title">My first name is</string>
+    <string name="sign_up_username_button_bottom">Continue</string>
+    <string name="sign_in_birthday_title">My birthday is</string>
+    <string name="my_number_is">My number is</string>
+    <string name="dlg_ver_code_sent_success">Verification code sent</string>
+    <string name="unknown_unknown_check_email">Check your email for a verification code.</string>
+    <string name="unknown_unknown_resend_code">Resend code</string>
+    <string name="unknown_unknown_code_invalid">The code you entered is invalid.</string>
 </resources>

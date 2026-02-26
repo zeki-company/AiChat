@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 背景颜色 -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#7033FF"
+                android:centerColor="#7033FF"
+                android:endColor="#7033FF"
+                android:angle="135"
+                android:gradientRadius="1" />
+        </shape>
+    </item>
+
+    <!-- 中间 logo 可以后续按需补充，这里先仅用纯背景避免缺失资源 -->
+
+</layer-list>

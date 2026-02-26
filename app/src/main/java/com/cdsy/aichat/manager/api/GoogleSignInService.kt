@@ -24,8 +24,10 @@ class GoogleSignInService(private val context: Context) {
 
     private fun setupGoogleSignIn() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestId()
+            // 与旧项目保持一致：要 idToken + email + id
             .requestIdToken(Constants.GOOGLE_CLIENT_ID)
+            .requestEmail()
+            .requestId()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(context, gso)

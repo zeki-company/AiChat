@@ -10,10 +10,14 @@ class NetErrorInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val response = chain.proceed(chain.request())
         if (response.code in 400..503) {
-            val e = globalMoshi.fromJson<ErrorResultModel>(response.body?.string())
-            if (e != null)
-                throw e.error
-            else throw ServerError(9999, "API UnKnown Error")
+            val bodyString = response.body?.string()
+            val e = globalMoshi.fromJson<ErrorResultModel>(bodyString)
+            if (e != null) {
+                // 和正常结构一致：code / error / data / page / timestamp
+                throw ServerError(e.code, e.error ?: "API Error")
+            } else {
+                throw ServerError(9999, "API UnKnown Error")
+            }
         }
         return response
     }
@@ -22,5 +26,14 @@ class NetErrorInterceptor : Interceptor {
 
 data class ServerError(val code: Int, override val message: String) : RuntimeException()
 
+/**
+ * 错误时服务端返回结构（和 ResultModel 同结构，只是我们只关心 code / error）
+ */
 @JsonClass(generateAdapter = true)
-data class ErrorResultModel(val success: Boolean, val error: ServerError)
+data class ErrorResultModel(
+    val code: Int,
+    val error: String? = null,
+    val data: Any? = null,
+    val page: Any? = null,
+    val timestamp: Long? = null
+)

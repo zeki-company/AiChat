@@ -1,11 +1,9 @@
 package com.cdsy.aichat.ui.message.list
 
-import android.view.LayoutInflater
 import com.cdsy.aichat.R
 import com.cdsy.aichat.databinding.FragmentMessagesListBinding
 import com.cdsy.aichat.ui.base.BaseFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.cdsy.aichat.ui.chat.navigateToChat
 import com.cdsy.aichat.ui.message.MessagesRecyclerAdapter
 import com.cdsy.aichat.ui.view.MessagePopupDialog
 import com.cdsy.aichat.ui.message.Message

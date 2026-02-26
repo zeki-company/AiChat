@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph"
+    app:startDestination="@id/SignInOrUpFragment">
+
+    <fragment
+        android:id="@+id/SignInOrUpFragment"
+        android:name="com.cdsy.aichat.ui.login.SignInOrUpFragment"
+        android:label="fragment_sign_in_or_up"
+        tools:layout="@layout/fragment_sign_in_or_up">
+        <!-- 跳转到邮箱登录 -->
+        <action
+            android:id="@+id/action_SignInOrUpFragment_to_SignWithEmailFragment"
+            app:destination="@id/SignWithEmailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignWithEmailFragment"
+        android:name="com.cdsy.aichat.ui.login.SignWithEmailFragment"
+        android:label="fragment_sign_with_email"
+        tools:layout="@layout/fragment_sign_with_email">
+        <action
+            android:id="@+id/action_SignWithEmailFragment_to_SignEmailCodeFragment"
+            app:destination="@id/SignEmailCodeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignEmailCodeFragment"
+        android:name="com.cdsy.aichat.ui.login.SignEmailCodeFragment"
+        android:label="fragment_sign_email_code"
+        tools:layout="@layout/fragment_sign_email_code" />
+
+    <fragment
+        android:id="@+id/SignWithPhoneFragment"
+        android:name="com.cdsy.aichat.ui.login.SignWithPhoneFragment"
+        android:label="fragment_sign_with_phone"
+        tools:layout="@layout/fragment_sign_with_phone">
+        <action
+            android:id="@+id/action_SignWithPhoneFragment_to_SignPhoneCodeFragment"
+            app:destination="@id/SignPhoneCodeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignPhoneCodeFragment"
+        android:name="com.cdsy.aichat.ui.login.SignPhoneCodeFragment"
+        android:label="fragment_sign_phone_code"
+        tools:layout="@layout/fragment_sign_phone_code" />
+
+    <fragment
+        android:id="@+id/SignInNameFragment"
+        android:name="com.cdsy.aichat.ui.login.SignInNameFragment"
+        android:label="fragment_sign_in_name"
+        tools:layout="@layout/fragment_sign_in_name">
+        <action
+            android:id="@+id/action_SignInNameFragment_to_SignInBirthDayFragment"
+            app:destination="@id/SignInBirthDayFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignInBirthDayFragment"
+        android:name="com.cdsy.aichat.ui.login.SignInBirthDayFragment"
+        android:label="fragment_sign_in_birthday"
+        tools:layout="@layout/fragment_sign_in_birthday" />
+
+</navigation>
+

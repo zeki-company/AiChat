@@ -10,7 +10,7 @@ import com.cdsy.aichat.databinding.FragmentCharacterDetailBinding
 import com.cdsy.aichat.ui.activity.ContentActivity
 import com.cdsy.aichat.ui.base.BaseFragment
 import com.cdsy.aichat.ui.chat.navigateToChat
-import com.cdsy.aichat.ui.homepage.ChatterTagRecyclerAdapter
+import com.cdsy.aichat.ui.club.ChatterTagRecyclerAdapter
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 
@@ -56,6 +56,7 @@ class CharacterDetailFragment :
         }
 
         binding.viewGoChat.setOnClickListener {
+
             viewModel.characterDetail.value?.let { characterDetail ->
                 requireContext().navigateToChat(
                     credit = viewModel.credit.value ?: 0, characterDetail = characterDetail

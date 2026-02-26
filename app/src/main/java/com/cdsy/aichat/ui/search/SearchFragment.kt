@@ -8,8 +8,8 @@ import com.cdsy.aichat.databinding.FragmentSearchBinding
 import com.cdsy.aichat.ui.activity.ContentActivity
 import com.cdsy.aichat.ui.base.BaseFragment
 import com.cdsy.aichat.ui.character_detail.navigateToCharacterDetail
-import com.cdsy.aichat.ui.homepage.ChatterTagRecyclerAdapter
-import com.cdsy.aichat.ui.homepage.MutiChatterRecyclerAdapter
+import com.cdsy.aichat.ui.club.ChatterTagRecyclerAdapter
+import com.cdsy.aichat.ui.club.MutiChatterRecyclerAdapter
 import com.cdsy.aichat.util.setOnLoadMoreListener
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager

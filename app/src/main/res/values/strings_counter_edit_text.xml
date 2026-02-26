@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CounterEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/color_c4c4c4</item>    <!-- 默认状态颜色 -->
+        <item name="colorControlActivated">@color/color_c4c4c4</item> <!-- 激活状态颜色 -->
+        <item name="colorControlHighlight">@color/color_black</item> <!-- 高亮状态颜色 -->
+    </style>
+</resources>

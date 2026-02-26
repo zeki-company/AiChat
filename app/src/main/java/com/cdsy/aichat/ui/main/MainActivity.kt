@@ -28,7 +28,7 @@ class MainActivity : BindingActivity<ActivityMainBinding, MainViewModel>(
 
     private fun setupBottomNavigation() {
         val listOfMainGraph = listOf(
-            R.navigation.top_homepage,
+            R.navigation.top_club,
             R.navigation.top_messages,
             R.navigation.top_account
         )

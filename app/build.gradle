@@ -3,36 +3,41 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
-// apply plugin: 'com.google.gms.google-services'  // 暂时注释掉，需要配置google-services.json
+apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace 'com.cdsy.aichat'
     compileSdk 34
-
     defaultConfig {
-        applicationId "com.deepislet.tavern.test"
+        applicationId "com.hiyak.chat"
         minSdk 26
         targetSdk 34
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 179
+        versionName "2.4.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         debug {
-            keyAlias 'aichat'
-            keyPassword '123456'
-            storeFile file('../aichat.jks')
-            storePassword '123456'
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('keystore.properties').newDataInputStream())
+
+            storeFile file(properties.getProperty('key.store'))
+            storePassword properties.getProperty('key.store.password')
+            keyAlias properties.getProperty('key.alias')
+            keyPassword properties.getProperty('key.alias.password')
             v1SigningEnabled true
             v2SigningEnabled true
         }
-        config {
-            keyAlias 'aichat'
-            keyPassword '123456'
-            storeFile file('../aichat.jks')
-            storePassword '123456'
+        release {
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('keystore.properties').newDataInputStream())
+
+            storeFile file(properties.getProperty('key.store'))
+            storePassword properties.getProperty('key.store.password')
+            keyAlias properties.getProperty('key.alias')
+            keyPassword properties.getProperty('key.alias.password')
             v1SigningEnabled true
             v2SigningEnabled true
         }
@@ -41,11 +46,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
+            signingConfig signingConfigs.debug
         }
     }
 /*    compileOptions {
@@ -62,24 +68,30 @@ android {
         //产品环境
         production {
             dimension "environment"
-            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
-            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "String", "BASE_URL", '"https://api.hiyak.com/"'
+            buildConfigField "String", "APP_ID", '"2205846881542914"'
+            buildConfigField "String", "APPS_FLYER_ID", '"5H5xCvMgyHWEC4uJbxdQkA"'
+            buildConfigField "String", "APP_SECRET", '"40d98ab7deda4521a07408b2822e869b"'
             buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
             buildConfigField "Boolean", "USE_MOCK", "false"
         }
         //测试环境
         staging {
             dimension "environment"
-            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
-            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "String", "BASE_URL", '"https://devapi.hiyak.com/"'
+            buildConfigField "String", "APP_ID", '"2089269488739070"'
+            buildConfigField "String", "APPS_FLYER_ID", '"nr4oEJwQ24GX4QMjEeVXiN"'
+            buildConfigField "String", "APP_SECRET", '"40d98ab7deda4521a07408b2822e869b"'
             buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
             buildConfigField "Boolean", "USE_MOCK", "false"
         }
         //开发环境
         development {
             dimension "environment"
-            buildConfigField "String", "BASE_URL", '"http://18.210.245.45:10000/v1/api/"'
-            buildConfigField "String", "X_APP_ID", '"6136235989"'
+            buildConfigField "String", "BASE_URL", '"https://devapi.hiyak.com/"'
+            buildConfigField "String", "APP_ID", '"2089269488739070"'
+            buildConfigField "String", "APPS_FLYER_ID", '"nr4oEJwQ24GX4QMjEeVXiN"'
+            buildConfigField "String", "APP_SECRET", '"40d98ab7deda4521a07408b2822e869b"'
             buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
             buildConfigField "Boolean", "USE_MOCK", "false"
         }
@@ -93,11 +105,27 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    dataBinding {
-        enabled = true
+
+    lint {
+        // 关闭 NullSafeMutableLiveData 这一条 Lint 规则
+        disable 'NullSafeMutableLiveData'
     }
-    viewBinding{
-        enabled = true
+
+    buildFeatures {
+        buildConfig = true
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+kapt {
+    javacOptions {
+        option("-source", "8")
+        option("-target", "8")
+    }
+    arguments {
+        arg("dagger.formatGeneratedSource", "disabled")
+        arg("dagger.fastInit", "enabled")
     }
 }
 
@@ -119,9 +147,9 @@ dependencies {
     def checkVersionLib = "2.4.1_androidx"
 
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.20"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.20"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation ("com.github.zhpanvip:bannerviewpager:3.5.12")
+    implementation("com.github.zhpanvip:bannerviewpager:3.5.12")
 
     //compile 'com.zzhoujay.richtext:richtext:latest-version'
 
@@ -164,7 +192,6 @@ dependencies {
     implementation("androidx.navigation:navigation-runtime-ktx:$nav_version")
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-    
 
 
     /*//Database
@@ -191,7 +218,7 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}"
     implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
     implementation("com.squareup.retrofit2:retrofit:${retrofit_version}") {
-        exclude module: 'okhttp'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
 
     //Glide
@@ -200,6 +227,15 @@ dependencies {
 
     //Google Sign-In
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+    // Firebase（从旧项目引入）
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // AppsFlyer（从旧项目引入）
+    implementation 'com.appsflyer:af-android-sdk:6.17.5'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
 
 /*    //update
     implementation "com.github.AlexLiuSheng:CheckVersionLib:${checkVersionLib}"*/
@@ -214,7 +250,7 @@ configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         if (details.requested.group == 'org.jetbrains.kotlin') {
             if (details.requested.name.startsWith("kotlin-stdlib")) {
-                details.useVersion "1.8.20"
+                details.useVersion "1.9.20"
             }
         }
     }

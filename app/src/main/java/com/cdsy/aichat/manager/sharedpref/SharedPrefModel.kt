@@ -20,7 +20,7 @@ object SharedPrefModel : KotprefModel() {
     override val kotprefName: String = Constants.SHARED_PREF_FILE_NAME
 
     //设备参数
-    var xDeviceId: String by stringPref()
+    var deviceToken: String by stringPref()
     var appEnvCode: String by stringPref()
     var appConfigVersionCode: String by stringPref()
 

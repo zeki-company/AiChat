@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 从旧项目迁移的通用尺寸，供 Club 等界面使用 -->
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp6">6dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+
+    <!-- 文字尺寸：Body H7 对应 16dp -->
+    <dimen name="text_size_body_h7">16dp</dimen>
+
+</resources>
+

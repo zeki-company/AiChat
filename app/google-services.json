@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "864705500090",
+    "project_id": "hiyak-20240514",
+    "storage_bucket": "hiyak-20240514.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864705500090:android:23acf3f00ef0ff1d220383",
+        "android_client_info": {
+          "package_name": "com.hiyak.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864705500090-2ni2vu9bsvcp1o1ovboa52m900of458o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hiyak.chat",
+            "certificate_hash": "752c0e80f86bc1d30bc1a14b6cec13ac06e7bb8d"
+          }
+        },
+        {
+          "client_id": "864705500090-g140f1ethspn7qtltop1o8fc6ihncdhj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hiyak.chat",
+            "certificate_hash": "e194906956ebce6315f6f940c0779a8e15f2dcec"
+          }
+        },
+        {
+          "client_id": "864705500090-t7fhrtdomo6iomj60l9gmc65vp94fqms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hiyak.chat",
+            "certificate_hash": "bb01d89a6a7ab92033922bd7b41ec6efb7dc7a60"
+          }
+        },
+        {
+          "client_id": "864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkijbMUchxd_OmfLgIxFHDuneJwjmhI6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864705500090-obk4vsai2oak8mc6e8fqa0i9pmmlljfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

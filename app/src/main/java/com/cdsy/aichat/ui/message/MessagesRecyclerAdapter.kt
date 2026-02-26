@@ -6,6 +6,7 @@ import com.cdsy.aichat.databinding.ItemEnableNotificationBinding
 import com.cdsy.aichat.databinding.ItemMessagesBinding
 import com.cdsy.aichat.databinding.ItemNoMoreBinding
 import com.cdsy.aichat.ui.base.HeaderRecyclerAdapter
+import timber.log.Timber
 
 
 class MessagesRecyclerAdapter(
@@ -38,7 +39,7 @@ class MessagesRecyclerAdapter(
         }
 
         binding.root.setOnLongClickListener { view ->
-            android.util.Log.d("MessagesRecyclerAdapter", "Long click detected for position: $position")
+            Timber.d("MessagesRecyclerAdapter", "Long click detected for position: $position")
             onItemLongClick(baseList[position], view)
             true
         }
